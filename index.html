@@ -1,162 +1,360 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>MD Ashraf Ali Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Ashraf | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<meta name="description" content="MD Ashraf - Software Developer skilled in DSA, SQL, Machine Learning, and Web Development.">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0b1120;color:#e2e8f0;}
 
-body{
-font-family: Arial;
-margin:0;
-background:#f4f4f4;
+nav{display:flex;justify-content:space-between;padding:20px 80px;background:rgba(0,0,0,0.6);position:sticky;top:0;}
+nav a{color:white;margin:0 15px;text-decoration:none;}
+nav a:hover{color:#38bdf8;}
+
+.hero{display:flex;justify-content:space-between;align-items:center;padding:100px 80px;flex-wrap:wrap;}
+.hero-text h1{font-size:50px;}
+.hero-text span{color:#38bdf8;}
+.hero-text p{margin:20px 0;color:#94a3b8;}
+
+.hero img{
+width:250px;
+height:250px;
+border-radius:50%;
+border:4px solid #38bdf8;
+transition:0.3s;
+}
+.hero img:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #38bdf8;
 }
 
-header{
-background:#222;
-color:white;
-text-align:center;
+.typing{
+border-right:3px solid #38bdf8;
+white-space:nowrap;
+overflow:hidden;
+animation:typing 4s steps(40,end),blink .7s infinite;
+}
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+section{padding:80px;}
+h2{color:#38bdf8;margin-bottom:20px;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+.card{
+background:#111827;
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+opacity:0;
+transform:translateY(40px);
+}
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #38bdf8;
+}
+
+.badge{
+display:inline-block;
+background:#1f2937;
+color:#38bdf8;
+padding:8px 12px;
+margin:5px;
+border-radius:10px;
+}
+
+/* CONTACT */
+.contact-box{
+background:#111827;
 padding:30px;
+border-radius:15px;
+line-height:2;
 }
-
-nav{
-background:#444;
-text-align:center;
-padding:12px;
-}
-
-nav a{
-color:white;
+.contact-box a{
+color:#38bdf8;
 text-decoration:none;
-margin:20px;
-font-size:18px;
+}
+.contact-box a:hover{
+text-decoration:underline;
 }
 
-nav a:hover{
-color:yellow;
-}
+footer{text-align:center;padding:20px;background:#020617;}
 
-section{
-padding:40px;
+@media(max-width:768px){
+.hero{flex-direction:column;text-align:center;}
 }
-
-h2{
-color:#333;
-}
-
-ul{
-list-style-type:square;
-}
-
-.project{
-background:white;
-padding:20px;
-margin-top:20px;
-border-radius:8px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:20px;
-}
-
 </style>
-
 </head>
 
 <body>
 
-<header>
-<h1>MD Ashraf Ali</h1>
-<p>Software Developer | C++ | Java | SQL | Machine Learning</p>
-</header>
-
 <nav>
+<h2>MD Ashraf</h2>
+<div>
 <a href="#about">About</a>
-<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#expertise">Expertise</a>
+<a href="#education">Education</a>
+<a href="#certifications">Certifications</a>
 <a href="#contact">Contact</a>
+</div>
 </nav>
 
-<section id="about">
+<!-- HERO -->
+<div class="hero">
+<div class="hero-text">
+<h1>Hi, I'm <span>MD Ashraf</span></h1>
+<p class="typing">Software Developer | DSA | SQL | Machine Learning</p>
 
+<div style="margin-top:20px;">
+<a href="https://drive.google.com/file/d/1EAk-MVW3Q4WXM_7VF34PyqBrvbCYiml9/view?usp=drive_link" target="_blank" style="padding:10px 20px;background:#38bdf8;color:black;border-radius:8px;text-decoration:none;margin-right:10px;">General CV</a>
+<a href="https://drive.google.com/file/d/1d5VTbjGbLfGbWf1hK1aALlXKovyhkyA-/view?usp=drive_link" target="_blank" style="padding:10px 20px;background:#38bdf8;color:black;border-radius:8px;text-decoration:none;margin-right:10px;">Specialized CV</a>
+<a href="https://github.com/ashraf1141" target="_blank" style="color:#38bdf8;margin-right:10px;">GitHub</a>
+<a href="https://www.linkedin.com/in/mdashraf-ali123/" target="_blank" style="color:#38bdf8;">LinkedIn</a>
+</div>
+
+<p style="margin-top:15px;">✔ Solved 300+ DSA problems | Strong in DBMS, OS, SQL</p>
+</div>
+
+<img src="c:\Users\mdash\Downloads\Professional portrait of a young man.png" alt="profile">
+</div>
+
+<!-- ABOUT -->
+<section id="about">
 <h2>About Me</h2>
 
-<p>
-Hello! I am MD Ashraf Ali, a Computer Science student interested in
-software development, data structures, and machine learning.
-I enjoy solving programming problems and building real-world applications.
-</p>
+<div class="grid">
 
+<div class="card">
+<p>
+I'm a B.Tech Computer Science student with a strong interest in <b>Data Science, Artificial Intelligence, and Machine Learning</b>.
+
+<br><br>
+
+I enjoy building <b>data-driven applications</b>, working with real-world datasets, and continuously improving my <b>problem-solving skills</b> through hands-on projects and DSA practice.
+
+<br><br>
+
+As a data science aspirant, I focus on understanding core concepts, applying them practically, and growing into a skilled <b>AI Engineer</b>.
+
+<br><br>
+
+Alongside this, I have a strong interest in <b>entrepreneurship</b> and aim to build innovative tech products that solve real-world problems.
+</p>
+</div>
+
+<div class="card">
+<h3>Highlights</h3>
+
+<span class="badge">Data Science Focused</span>
+<span class="badge">AI & Machine Learning</span>
+<span class="badge">Entrepreneurial Mindset</span>
+<span class="badge">Building AI Assistants</span>
+<span class="badge">Creating Data Dashboards</span>
+<span class="badge">Innovative Tech Products</span>
+<span class="badge">300+ DSA Problems Solved</span>
+
+</div>
+
+</div>
 </section>
 
-<section id="skills">
+<!-- EXPERTISE -->
+<section id="expertise">
+<h2>Technical Expertise</h2>
+<div class="grid">
 
-<h2>Skills</h2>
+<div class="card">
+<h3>Programming Languages</h3>
+<span class="badge">C++</span>
+<span class="badge">Python</span>
+<span class="badge">SQL</span>
+</div>
+
+<div class="card">
+<h3>Data Science</h3>
+<span class="badge">Supervised Learning</span>
+<span class="badge">Unsupervised Learning</span>
+<span class="badge">Data Cleaning</span>
+<span class="badge">EDA</span>
+</div>
+
+<div class="card">
+<h3>Libraries & Frameworks</h3>
+<span class="badge">NumPy</span>
+<span class="badge">Pandas</span>
+<span class="badge">Matplotlib</span>
+<span class="badge">Seaborn</span>
+<span class="badge">Scikit-learn</span>
+</div>
+
+<div class="card">
+<h3>Tools & Technologies</h3>
+<span class="badge">MySQL</span>
+<span class="badge">Excel</span>
+<span class="badge">Power BI</span>
+<span class="badge">Hadoop</span>
+<span class="badge">GitHub</span>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Uber/Ola Ride Data Analysis</h3>
+<p><b>Tech:</b> SQL, MySQL</p>
+<p>Analyzed ride booking data to extract insights like peak hours, revenue trends, cancellations, and driver performance.</p>
+<a href="https://github.com/ashraf1141" target="_blank">GitHub →</a>
+</div>
+
+<div class="card">
+<h3>Interview Analyzer App</h3>
+<p><b>Tech:</b> Python, NumPy, Pandas, Scikit-learn</p>
+<p>AI-based system to evaluate interview performance and generate scores.</p>
+<a href="https://github.com/ashraf1141/Interview-Analyzer-App-" target="_blank">GitHub →</a>
+</div>
+
+<div class="card">
+<h3>Diabetes Prediction</h3>
+<p><b>Tech:</b> Python, ML</p>
+<p>Built predictive model for disease detection.</p>
+<a href="https://github.com/ashraf1141/diabetes-predictive-app" target="_blank">GitHub →</a>
+</div>
+
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Bachelor of Technology (B.Tech)</h3>
+<p><b>Branch:</b> Computer Science</p>
+<p><b>College:</b> Lovely Professional University</p>
+<p><b>Year:</b> 2023 - 2027</p>
+<p><b>CGPA:</b> 8.2</p>
+</div>
+
+<div class="card">
+<h3>Intermediate (12th)</h3>
+<p><b>Board:</b> State Board</p>
+<p><b>School:</b> S.M.J College</p>
+<p><b>Year:</b> 2020 - 2022</p>
+<p><b>Percentage:</b> 82%</p>
+</div>
+
+<div class="card">
+<h3>Matriculation (10th)</h3>
+<p><b>Board:</b> State Board</p>
+<p><b>School:</b> High School Garha</p>
+<p><b>Year:</b> 2018 - 2020</p>
+<p><b>Percentage:</b> 76%</p>
+</div>
+
+</div>
+</section>
+
+<!-- TRAINING -->
+<section id="training">
+<h2>Training</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Data Structures & Algorithms (DSA)</h3>
+<p><b>Institution:</b> Lovely Professional University</p>
+<p><b>Duration:</b> 1 Month</p>
+<p>Completed intensive training focused on problem solving and core data structures.</p>
 
 <ul>
-<li>C++ Programming</li>
-<li>Java Programming</li>
-<li>SQL & DBMS</li>
-<li>Data Structures</li>
-<li>Machine Learning</li>
-<li>HTML & CSS</li>
+<li>Arrays, Linked List, Stack, Queue</li>
+<li>Trees, Graphs, Recursion</li>
+<li>Solved 300+ DSA problems</li>
 </ul>
 
-</section>
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div class="project">
-
-<h3>Diabetes Prediction System</h3>
-
-<p>
-A machine learning project that predicts whether a patient has diabetes
-based on health parameters like glucose level, BMI, blood pressure,
-insulin level, and age.
-</p>
-
-<p><b>Technologies:</b> Python, Pandas, Scikit-Learn</p>
-
+<a href="https://drive.google.com/file/d/1ZS2nlQilAB6weV-qOqIM4K7PQWurfd2c/view?usp=drive_link" target="_blank">View Certificate →</a>
 </div>
 
-<div class="project">
-
-<h3>Restaurant Management System</h3>
-
-<p>
-A GUI-based application used to manage restaurant orders,
-menu items, and bill generation for customers.
-</p>
-
-<p><b>Technologies:</b> Java GUI / C++ Qt, SQLite</p>
-
 </div>
-
 </section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<h2>Certifications</h2>
+<div class="grid">
+
+<div class="card">
+<h3>NPTEL – Randomized Methods in Complexity</h3>
+<a href="https://drive.google.com/file/d/1ZS2nlQilAB6weV-qOqIM4K7PQWurfd2c/view?usp=drive_link" target="_blank">View →</a>
+</div>
+
+<div class="card">
+<h3>Infosys – Generative AI</h3>
+<a href="#" target="_blank">View →</a>
+</div>
+
+<div class="card">
+<h3>freeCodeCamp – Responsive Web Design</h3>
+<a href="#" target="_blank">View →</a>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-
 <h2>Contact</h2>
 
-<p>Email: ashraf@email.com</p>
-<p>GitHub: github.com/ashraf</p>
-<p>LinkedIn: linkedin.com/in/ashraf</p>
+<div class="contact-box">
+<h3>Get in Touch</h3>
+<p>I'm open to opportunities, collaborations, and discussions on tech and data science.</p>
 
+<p><b>Email</b><br>
+<a href="mailto:ashraflpu123@gmail.com">ashraflpu123@gmail.com</a></p>
+
+<p><b>Phone</b><br>
+<a href="tel:+919508683844">+91-9508683844</a></p>
+
+<p><b>GitHub</b><br>
+<a href="https://github.com/ashraf1141" target="_blank">github.com/ashraf1141</a></p>
+
+<p><b>LinkedIn</b><br>
+<a href="https://www.linkedin.com/in/mdashraf-ali123/" target="_blank">linkedin.com/in/mdashraf-ali123</a></p>
+
+</div>
 </section>
 
 <footer>
-
-<p>© 2026 MD Ashraf Ali</p>
-
+<p>© 2026 MD Ashraf</p>
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+cards.forEach(card => {
+const rect = card.getBoundingClientRect();
+if(rect.top < window.innerHeight - 50){
+card.classList.add('show');
+}
+});
+});
+</script>
 
 </body>
 </html>
